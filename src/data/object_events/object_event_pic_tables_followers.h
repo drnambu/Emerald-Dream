@@ -657,13 +657,9 @@ static const struct SpriteFrameImage sPicTable_Slowking[] = {
 };
 #endif //P_GEN_2_CROSS_EVOS
 
-#if OW_BATTLE_ONLY_FORMS
-#if P_MEGA_EVOLUTIONS
 static const struct SpriteFrameImage sPicTable_SlowbroMega[] = {
     overworld_ascending_frames(gObjectEventPic_SlowbroMega, 4, 4),
 };
-#endif // P_MEGA_EVOLUTIONS
-#endif // OW_BATTLE_ONLY_FORMS
 
 #if P_GALARIAN_FORMS
 static const struct SpriteFrameImage sPicTable_SlowpokeGalar[] = {
@@ -1080,11 +1076,9 @@ static const struct SpriteFrameImage sPicTable_ScizorF[] = {
 };
 #endif //P_GENDER_DIFFERENCES
 #if OW_BATTLE_ONLY_FORMS
-#if P_MEGA_EVOLUTIONS
 static const struct SpriteFrameImage sPicTable_ScizorMega[] = {
     overworld_ascending_frames(gObjectEventPic_ScizorMega, 4, 4),
 };
-#endif // P_MEGA_EVOLUTIONS
 #endif // OW_BATTLE_ONLY_FORMS
 #endif //P_GEN_2_CROSS_EVOS
 
@@ -1143,11 +1137,9 @@ static const struct SpriteFrameImage sPicTable_Pinsir[] = {
     overworld_ascending_frames(gObjectEventPic_Pinsir, 4, 4),
 };
 #if OW_BATTLE_ONLY_FORMS
-#if P_MEGA_EVOLUTIONS
 static const struct SpriteFrameImage sPicTable_PinsirMega[] = {
     overworld_ascending_frames(gObjectEventPic_PinsirMega, 4, 4),
 };
-#endif // P_MEGA_EVOLUTIONS
 #endif // OW_BATTLE_ONLY_FORMS
 #endif //P_FAMILY_PINSIR
 
@@ -1874,11 +1866,9 @@ static const struct SpriteFrameImage sPicTable_HeracrossF[] = {
 };
 #endif //P_GENDER_DIFFERENCES
 #if OW_BATTLE_ONLY_FORMS
-#if P_MEGA_EVOLUTIONS
 static const struct SpriteFrameImage sPicTable_HeracrossMega[] = {
     overworld_ascending_frames(gObjectEventPic_HeracrossMega, 4, 4),
 };
-#endif // P_MEGA_EVOLUTIONS
 #endif // OW_BATTLE_ONLY_FORMS
 #endif //P_FAMILY_HERACROSS
 
@@ -2200,11 +2190,9 @@ static const struct SpriteFrameImage sPicTable_Swampert[] = {
     overworld_ascending_frames(gObjectEventPic_Swampert, 4, 4),
 };
 #if OW_BATTLE_ONLY_FORMS
-#if P_MEGA_EVOLUTIONS
 static const struct SpriteFrameImage sPicTable_SwampertMega[] = {
     overworld_ascending_frames(gObjectEventPic_SwampertMega, 4, 4),
 };
-#endif // P_MEGA_EVOLUTIONS
 #endif // OW_BATTLE_ONLY_FORMS
 #endif //P_FAMILY_MUDKIP
 
@@ -2333,11 +2321,9 @@ static const struct SpriteFrameImage sPicTable_Gardevoir[] = {
     overworld_ascending_frames(gObjectEventPic_Gardevoir, 4, 4),
 };
 #if OW_BATTLE_ONLY_FORMS
-#if P_MEGA_EVOLUTIONS
 static const struct SpriteFrameImage sPicTable_GardevoirMega[] = {
     overworld_ascending_frames(gObjectEventPic_GardevoirMega, 4, 4),
 };
-#endif // P_MEGA_EVOLUTIONS
 #endif // OW_BATTLE_ONLY_FORMS
 
 #if P_GEN_4_CROSS_EVOS
@@ -2345,11 +2331,9 @@ static const struct SpriteFrameImage sPicTable_Gallade[] = {
     overworld_ascending_frames(gObjectEventPic_Gallade, 4, 4),
 };
 #if OW_BATTLE_ONLY_FORMS
-#if P_MEGA_EVOLUTIONS
 static const struct SpriteFrameImage sPicTable_GalladeMega[] = {
     overworld_ascending_frames(gObjectEventPic_GalladeMega, 4, 4),
 };
-#endif // P_MEGA_EVOLUTIONS
 #endif // OW_BATTLE_ONLY_FORMS
 #endif //P_GEN_4_CROSS_EVOS
 #endif //P_FAMILY_RALTS
@@ -2442,11 +2426,9 @@ static const struct SpriteFrameImage sPicTable_Sableye[] = {
     overworld_ascending_frames(gObjectEventPic_Sableye, 4, 4),
 };
 #if OW_BATTLE_ONLY_FORMS
-#if P_MEGA_EVOLUTIONS
 static const struct SpriteFrameImage sPicTable_SableyeMega[] = {
     overworld_ascending_frames(gObjectEventPic_SableyeMega, 4, 4),
 };
-#endif // P_MEGA_EVOLUTIONS
 #endif // OW_BATTLE_ONLY_FORMS
 #endif //P_FAMILY_SABLEYE
 
@@ -2455,11 +2437,9 @@ static const struct SpriteFrameImage sPicTable_Mawile[] = {
     overworld_ascending_frames(gObjectEventPic_Mawile, 4, 4),
 };
 #if OW_BATTLE_ONLY_FORMS
-#if P_MEGA_EVOLUTIONS
 static const struct SpriteFrameImage sPicTable_MawileMega[] = {
     overworld_ascending_frames(gObjectEventPic_MawileMega, 4, 4),
 };
-#endif // P_MEGA_EVOLUTIONS
 #endif // OW_BATTLE_ONLY_FORMS
 #endif //P_FAMILY_MAWILE
 
@@ -2516,11 +2496,9 @@ static const struct SpriteFrameImage sPicTable_Manectric[] = {
     overworld_ascending_frames(gObjectEventPic_Manectric, 4, 4),
 };
 #if OW_BATTLE_ONLY_FORMS
-#if P_MEGA_EVOLUTIONS
 static const struct SpriteFrameImage sPicTable_ManectricMega[] = {
     overworld_ascending_frames(gObjectEventPic_ManectricMega, 4, 4),
 };
-#endif // P_MEGA_EVOLUTIONS
 #endif // OW_BATTLE_ONLY_FORMS
 #endif //P_FAMILY_ELECTRIKE
 
@@ -2598,11 +2576,9 @@ static const struct SpriteFrameImage sPicTable_Sharpedo[] = {
     overworld_ascending_frames(gObjectEventPic_Sharpedo, 4, 4),
 };
 #if OW_BATTLE_ONLY_FORMS
-#if P_MEGA_EVOLUTIONS
 static const struct SpriteFrameImage sPicTable_SharpedoMega[] = {
     overworld_ascending_frames(gObjectEventPic_SharpedoMega, 4, 4),
 };
-#endif // P_MEGA_EVOLUTIONS
 #endif // OW_BATTLE_ONLY_FORMS
 #endif //P_FAMILY_CARVANHA
 
@@ -2633,11 +2609,9 @@ static const struct SpriteFrameImage sPicTable_CameruptF[] = {
 };
 #endif //P_GENDER_DIFFERENCES
 #if OW_BATTLE_ONLY_FORMS
-#if P_MEGA_EVOLUTIONS
 static const struct SpriteFrameImage sPicTable_CameruptMega[] = {
     overworld_ascending_frames(gObjectEventPic_CameruptMega, 4, 4),
 };
-#endif // P_MEGA_EVOLUTIONS
 #endif // OW_BATTLE_ONLY_FORMS
 #endif //P_FAMILY_NUMEL
 
@@ -2696,11 +2670,9 @@ static const struct SpriteFrameImage sPicTable_Altaria[] = {
     overworld_ascending_frames(gObjectEventPic_Altaria, 4, 4),
 };
 #if OW_BATTLE_ONLY_FORMS
-#if P_MEGA_EVOLUTIONS
 static const struct SpriteFrameImage sPicTable_AltariaMega[] = {
     overworld_ascending_frames(gObjectEventPic_AltariaMega, 4, 4),
 };
-#endif // P_MEGA_EVOLUTIONS
 #endif // OW_BATTLE_ONLY_FORMS
 #endif //P_FAMILY_SWABLU
 
@@ -2816,11 +2788,9 @@ static const struct SpriteFrameImage sPicTable_Banette[] = {
     overworld_ascending_frames(gObjectEventPic_Banette, 4, 4),
 };
 #if OW_BATTLE_ONLY_FORMS
-#if P_MEGA_EVOLUTIONS
 static const struct SpriteFrameImage sPicTable_BanetteMega[] = {
     overworld_ascending_frames(gObjectEventPic_BanetteMega, 4, 4),
 };
-#endif // P_MEGA_EVOLUTIONS
 #endif // OW_BATTLE_ONLY_FORMS
 #endif //P_FAMILY_SHUPPET
 
@@ -2860,11 +2830,9 @@ static const struct SpriteFrameImage sPicTable_Absol[] = {
     overworld_ascending_frames(gObjectEventPic_Absol, 4, 4),
 };
 #if OW_BATTLE_ONLY_FORMS
-#if P_MEGA_EVOLUTIONS
 static const struct SpriteFrameImage sPicTable_AbsolMega[] = {
     overworld_ascending_frames(gObjectEventPic_AbsolMega, 4, 4),
 };
-#endif // P_MEGA_EVOLUTIONS
 #endif // OW_BATTLE_ONLY_FORMS
 #endif //P_FAMILY_ABSOL
 
@@ -2942,11 +2910,9 @@ static const struct SpriteFrameImage sPicTable_Salamence[] = {
     overworld_ascending_frames(gObjectEventPic_Salamence, 4, 4),
 };
 #if OW_BATTLE_ONLY_FORMS
-#if P_MEGA_EVOLUTIONS
 static const struct SpriteFrameImage sPicTable_SalamenceMega[] = {
     overworld_ascending_frames(gObjectEventPic_SalamenceMega, 4, 4),
 };
-#endif // P_MEGA_EVOLUTIONS
 #endif // OW_BATTLE_ONLY_FORMS
 #endif //P_FAMILY_BAGON
 
@@ -2961,11 +2927,9 @@ static const struct SpriteFrameImage sPicTable_Metagross[] = {
     overworld_ascending_frames(gObjectEventPic_Metagross, 4, 4),
 };
 #if OW_BATTLE_ONLY_FORMS
-#if P_MEGA_EVOLUTIONS
 static const struct SpriteFrameImage sPicTable_MetagrossMega[] = {
     overworld_ascending_frames(gObjectEventPic_MetagrossMega, 4, 4),
 };
-#endif // P_MEGA_EVOLUTIONS
 #endif // OW_BATTLE_ONLY_FORMS
 #endif //P_FAMILY_BELDUM
 

@@ -517,7 +517,7 @@ extern const u8 BattleScript_AlreadyAsleep[];
 extern const u8 BattleScript_CantMakeAsleep[];
 extern const u8 BattleScript_AlreadyPoisoned[];
 extern const u8 BattleScript_AlreadyParalyzed[];
-extern const u8 BattleScript_AlreadyBurned[];
+extern const u8 BattleScript_AlreadyBurned[]; //DRN handles frostbite as well
 extern const u8 BattleScript_PrintAbilityMadeIneffective[];
 extern const u8 BattleScript_ItDoesntAffectFoe[];
 
@@ -844,5 +844,8 @@ extern const u8 BattleScript_MetronomeAttackstring[];
 extern const u8 BattleScript_SleepTalkAttackstring[];
 extern const u8 BattleScript_NaturePowerAttackstring[];
 extern const u8 BattleScript_PokemonCantUseTheMove[];
+extern const u8 BattleScript_StupifyActivates[]; //DRN Stupify
+extern const u8 BattleScript_StealthRockBroken[]; //DRN rock types break stealth rocks
+extern const u8 BattleScript_SpikesBroken[]; //DRN ground types break spikes
 
 #endif // GUARD_BATTLE_SCRIPTS_H

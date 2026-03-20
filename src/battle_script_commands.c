@@ -16423,9 +16423,10 @@ void BS_JumpIfIntimidateAbilityPrevented(void)
 
     switch (ability)
     {
-    case ABILITY_INNER_FOCUS:
+    //DRN updated list of abilities that prevent intimidate
+    case ABILITY_STEADFAST:
     case ABILITY_SCRAPPY:
-    case ABILITY_OWN_TEMPO:
+    case ABILITY_BIG_PECKS:
     case ABILITY_OBLIVIOUS:
         if (GetConfig(B_UPDATED_INTIMIDATE) >= GEN_8)
         {
@@ -16440,6 +16441,43 @@ void BS_JumpIfIntimidateAbilityPrevented(void)
     case ABILITY_GUARD_DOG:
         hasAbility = TRUE;
         gBattlescriptCurrInstr = BattleScript_IntimidateInReverse;
+        break;
+    default:
+        gBattlescriptCurrInstr = cmd->nextInstr;
+        break;
+    }
+
+    if (hasAbility)
+    {
+        gLastUsedAbility = ability;
+        gBattlerAbility = gBattlerTarget;
+        RecordAbilityBattle(gBattlerTarget, gLastUsedAbility);
+    }
+}
+
+//DRN abilities that prevent stupify
+void BS_JumpIfStupifyAbilityPrevented(void)
+{
+    NATIVE_ARGS();
+
+    bool32 hasAbility = FALSE;
+    enum Ability ability = GetBattlerAbility(gBattlerTarget);
+
+    switch (ability)
+    {
+    case ABILITY_INNER_FOCUS:
+    case ABILITY_ILLUMINATE:
+    case ABILITY_OWN_TEMPO:
+    case ABILITY_FOREWARN:
+        if (GetConfig(B_UPDATED_INTIMIDATE) >= GEN_8)
+        {
+            hasAbility = TRUE;
+            gBattlescriptCurrInstr = BattleScript_IntimidatePrevented;
+        }
+        else
+        {
+            gBattlescriptCurrInstr = cmd->nextInstr;
+        }
         break;
     default:
         gBattlescriptCurrInstr = cmd->nextInstr;

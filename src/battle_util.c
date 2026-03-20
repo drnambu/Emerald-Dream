@@ -3632,6 +3632,14 @@ bool32 CanAbilityAbsorbMove(u32 battlerAtk, u32 battlerDef, enum Ability ability
         if (moveType == TYPE_FIRE && (B_FLASH_FIRE_FROZEN >= GEN_5 || !(gBattleMons[battlerDef].status1 & STATUS1_FREEZE)))
             effect = MOVE_ABSORBED_BY_BOOST_FLASH_FIRE;
         break;
+    //DRN add Queen of Bugs
+    case ABILITY_QUEEN_OF_BUGS:
+        if (GetConfig(B_REDIRECT_ABILITY_IMMUNITY) >= GEN_5 && moveType == TYPE_BUG)
+        {
+            effect = MOVE_ABSORBED_BY_STAT_INCREASE_ABILITY;
+            statId = STAT_DEF;
+        }
+    break;
     }
 
     if (effect == MOVE_ABSORBED_BY_NO_ABILITY || option != RUN_SCRIPT)
@@ -4394,6 +4402,18 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, enum Ability ab
                 gSpecialStatuses[battler].switchInAbilityDone = TRUE;
                 SET_STATCHANGER(STAT_ATK, 1, TRUE);
                 BattleScriptPushCursorAndCallback(BattleScript_IntimidateActivates);
+                effect++;
+            }
+            break;
+        //DRN STUPIFY
+        case ABILITY_STUPIFY:
+            if (!gSpecialStatuses[battler].switchInAbilityDone && !IsOpposingSideEmpty(battler))
+            {
+                SaveBattlerAttacker(gBattlerAttacker);
+                gBattlerAttacker = battler;
+                gSpecialStatuses[battler].switchInAbilityDone = TRUE;
+                SET_STATCHANGER(STAT_SPATK, 1, TRUE);
+                BattleScriptPushCursorAndCallback(BattleScript_StupifyActivates);
                 effect++;
             }
             break;
@@ -6817,6 +6837,9 @@ static bool32 IsBattlerGroundedInverseCheck(u32 battler, enum Ability ability, e
         return FALSE;
     if (ability == ABILITY_LEVITATE)
         return FALSE;
+    //DRN Air Lock grants flight
+    if (ability == ABILITY_AIR_LOCK)
+        return FALSE;
     if (IS_BATTLER_OF_TYPE(battler, TYPE_FLYING) && (checkInverse != INVERSE_BATTLE || !FlagGet(B_FLAG_INVERSE_BATTLE)))
         return FALSE;
     return TRUE;
@@ -7468,6 +7491,17 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageContext *ctx)
             && ctx->weather & B_WEATHER_SANDSTORM)
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
         break;
+    //DRN Glacial Force
+    case ABILITY_GLACIAL_FORCE:
+        if ((moveType == TYPE_ICE)
+            && ctx->weather & B_WEATHER_SNOW)
+           modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
+        break;
+    //DRN Fog Power
+    case ABILITY_FOG_POWER:
+        if (IsBattlerTerrainAffected(battlerAtk, ctx->abilityAtk, ctx->holdEffectAtk, STATUS_FIELD_MISTY_TERRAIN) && moveType == TYPE_FAIRY)
+           modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
+        break;
     case ABILITY_RIVALRY:
         if (AreBattlersOfSameGender(battlerAtk, battlerDef))
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.25));
@@ -7492,6 +7526,11 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageContext *ctx)
         break;
     case ABILITY_WATER_BUBBLE:
         if (moveType == TYPE_WATER)
+           modifier = uq4_12_multiply(modifier, UQ_4_12(2.0));
+        break;
+    //DRN Air bubble boosts flying type attacks
+    case ABILITY_AIR_BUBBLE:
+        if (moveType == TYPE_FLYING)
            modifier = uq4_12_multiply(modifier, UQ_4_12(2.0));
         break;
     case ABILITY_STEELWORKER:
@@ -7585,6 +7624,42 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageContext *ctx)
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.25));
         break;
     default:
+        break;
+    //DRN air bubble takes 1/2 damage from flying type attacks
+    case ABILITY_AIR_BUBBLE:
+        if (moveType == TYPE_FLYING)
+        {
+          modifier = uq4_12_multiply(modifier, UQ_4_12(0.5));
+            if (ctx->updateFlags)
+                RecordAbilityBattle(battlerDef, ctx->abilityDef);
+        }
+        break;
+    //DRN water does half damage to magma armor
+    case ABILITY_MAGMA_ARMOR:
+        if (moveType == TYPE_WATER)
+        {
+          modifier = uq4_12_multiply(modifier, UQ_4_12(0.5));
+            if (ctx->updateFlags)
+                RecordAbilityBattle(battlerDef, ctx->abilityDef);
+        }
+        break;
+    //DRN Heavy Metal halves Fighting damage
+        case ABILITY_HEAVY_METAL:
+        if (moveType == TYPE_FIGHTING)
+        {
+          modifier = uq4_12_multiply(modifier, UQ_4_12(0.5));
+            if (ctx->updateFlags)
+                RecordAbilityBattle(battlerDef, ctx->abilityDef);
+        }
+        break;
+    //DRN Light Metal halves Ground damage
+        case ABILITY_LIGHT_METAL:
+        if (moveType == TYPE_GROUND)
+        {
+          modifier = uq4_12_multiply(modifier, UQ_4_12(0.5));
+            if (ctx->updateFlags)
+                RecordAbilityBattle(battlerDef, ctx->abilityDef);
+        }
         break;
     }
 
@@ -7919,6 +7994,15 @@ static inline u32 CalcAttackStat(struct DamageContext *ctx)
                 RecordAbilityBattle(battlerDef, ABILITY_PURIFYING_SALT);
         }
         break;
+    //DRN Leaf Guard reduces damage in the sun
+    case ABILITY_LEAF_GUARD:
+        if (IsBattlerWeatherAffected(battlerDef, B_WEATHER_SUN) && IsBattleMovePhysical(move))
+        {
+            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(0.75));
+            if (ctx->updateFlags)
+                RecordAbilityBattle(battlerDef, ABILITY_LEAF_GUARD);
+        }
+        break;
     default:
         break;
     }
@@ -8084,6 +8168,15 @@ static inline u32 CalcDefenseStat(struct DamageContext *ctx)
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
             if (ctx->updateFlags)
                 RecordAbilityBattle(battlerDef, ABILITY_GRASS_PELT);
+        }
+        break;
+    //DRN misty shroud
+    case ABILITY_MISTY_SHROUD:
+        if (gFieldStatuses & STATUS_FIELD_MISTY_TERRAIN && !usesDefStat)
+        {
+            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
+            if (ctx->updateFlags)
+                RecordAbilityBattle(battlerDef, ABILITY_MISTY_SHROUD);
         }
         break;
     case ABILITY_FLOWER_GIFT:
@@ -8393,6 +8486,12 @@ static inline uq4_12_t GetDefenderAbilitiesModifier(struct DamageContext *ctx)
             modifier = UQ_4_12(0.5);
             recordAbility = TRUE;
         }
+        break;
+    //DRN big pecks reduces contact move damage
+    case ABILITY_BIG_PECKS:
+        if (IsMoveMakingContact(ctx->battlerAtk, ctx->battlerDef, ctx->abilityAtk, ctx->holdEffectAtk, ctx->move))
+            return UQ_4_12(0.85);
+            recordAbility = TRUE;
         break;
     case ABILITY_PUNK_ROCK:
         if (IsSoundMove(ctx->move))
@@ -8780,6 +8879,15 @@ static inline void MulByTypeEffectiveness(struct DamageContext *ctx, uq4_12_t *m
         if (ctx->updateFlags)
             RecordAbilityBattle(ctx->battlerAtk, ctx->abilityAtk);
     }
+    // DRN make corrosion hit steel types for damage
+    else if ((ctx->moveType == TYPE_POISON) && defType == TYPE_STEEL
+        && (ctx->abilityAtk == ABILITY_CORROSION)
+        && mod == UQ_4_12(0.0))
+    {
+        mod = UQ_4_12(1.0);
+        if (ctx->updateFlags)
+            RecordAbilityBattle(ctx->battlerAtk, ctx->abilityAtk);
+    }
 
     if (ctx->moveType == TYPE_PSYCHIC && defType == TYPE_DARK && gBattleMons[ctx->battlerDef].volatiles.miracleEye && mod == UQ_4_12(0.0))
         mod = UQ_4_12(1.0);
@@ -8884,15 +8992,18 @@ static inline uq4_12_t CalcTypeEffectivenessMultiplierInternal(struct DamageCont
     }
     else if (ctx->moveType == TYPE_GROUND && !IsBattlerGroundedInverseCheck(ctx->battlerDef, ctx->abilityDef, ctx->holdEffectDef, INVERSE_BATTLE, ctx->isAnticipation) && !(MoveIgnoresTypeIfFlyingAndUngrounded(ctx->move)))
     {
-        modifier = UQ_4_12(0.0);
-        if (ctx->updateFlags && ctx->abilityDef == ABILITY_LEVITATE)
-        {
-            gBattleStruct->moveResultFlags[ctx->battlerDef] |= (MOVE_RESULT_MISSED | MOVE_RESULT_DOESNT_AFFECT_FOE);
-            gLastUsedAbility = ABILITY_LEVITATE;
-            gLastLandedMoves[ctx->battlerDef] = 0;
-            gBattleStruct->missStringId[ctx->battlerDef] = B_MSG_GROUND_MISS;
-            RecordAbilityBattle(ctx->battlerDef, ABILITY_LEVITATE);
-        }
+    modifier = UQ_4_12(0.0);
+    //DRN Air Lock grants flight
+    if (ctx->updateFlags
+        && (ctx->abilityDef == ABILITY_LEVITATE
+            || ctx->abilityDef == ABILITY_AIR_LOCK))
+    {
+        gBattleStruct->moveResultFlags[ctx->battlerDef] |= (MOVE_RESULT_MISSED | MOVE_RESULT_DOESNT_AFFECT_FOE);
+        gLastUsedAbility = ctx->abilityDef;
+        gLastLandedMoves[ctx->battlerDef] = 0;
+        gBattleStruct->missStringId[ctx->battlerDef] = B_MSG_GROUND_MISS;
+        RecordAbilityBattle(ctx->battlerDef, ctx->abilityDef);
+    }
     }
     else if (GetConfig(B_SHEER_COLD_IMMUNITY) >= GEN_7 && GetMoveEffect(ctx->move) == EFFECT_SHEER_COLD && IS_BATTLER_OF_TYPE(ctx->battlerDef, TYPE_ICE))
     {
@@ -10338,7 +10449,8 @@ bool8 CanMonParticipateInSkyBattle(struct Pokemon *mon)
     u16 species = GetMonData(mon, MON_DATA_SPECIES);
     u16 monAbilityNum = GetMonData(mon, MON_DATA_ABILITY_NUM, NULL);
 
-    bool8 hasLevitateAbility = GetSpeciesAbility(species, monAbilityNum) == ABILITY_LEVITATE;
+    bool8 hasLevitateAbility = GetSpeciesAbility(species, monAbilityNum) == ABILITY_LEVITATE||
+    GetSpeciesAbility(species, monAbilityNum) == ABILITY_AIR_LOCK; //DRN air lock grants flight
     bool8 isFlyingType = GetSpeciesType(species, 0) == TYPE_FLYING || GetSpeciesType(species, 1) == TYPE_FLYING;
     bool8 monIsValidAndNotEgg = GetMonData(mon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(mon, MON_DATA_IS_EGG);
 

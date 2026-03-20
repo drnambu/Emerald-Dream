@@ -1373,6 +1373,10 @@
 	callnative BS_JumpIfIntimidateAbilityPrevented
 	.endm
 
+	.macro jumpifstupifyabilityprevented
+	callnative BS_JumpIfStupifyAbilityPrevented
+	.endm
+
 	.macro metalburstdamagecalculator failInstr:req
 	callnative BS_CalcMetalBurstDmg
 	.4byte \failInstr

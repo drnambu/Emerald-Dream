@@ -306,6 +306,11 @@ enum EvolutionConditions {
     IF_BAG_ITEM_COUNT,                  // The Player has the specific amount of an item in the bag. It then removes those items.
     IF_REGION,                          // The Player is in the specific region.
     IF_NOT_REGION,                      // The Player is NOT in the specific region.
+    //DRN Custom Conditions
+    IF_ATK_GT_SPATK,                    // The Pokémon's Attack is greater than its Special Attack stat.
+    IF_SPATK_GT_ATK,                    // The Pokémon's Special Attack is greater than its Attack stat.
+    IF_DEF_GT_SPDEF,                    // The Pokémon's Defense is greater than its Special Defense stat.
+    IF_DEF_LT_SPDEF,                    // The Pokémon's Defense is less than its Special Defense stat.
     CONDITIONS_END
 };
 

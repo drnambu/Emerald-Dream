@@ -6772,6 +6772,31 @@ BattleScript_IntimidateInReverse::
 	call BattleScript_TryIntimidateHoldEffects
 	goto BattleScript_IntimidateLoopIncrement
 
+BattleScript_StupifyActivates::
+	savetarget
+	call BattleScript_AbilityPopUp
+	setbyte gBattlerTarget, 0
+BattleScript_StupifyLoop:
+	jumpiftargetally BattleScript_StupifyLoopIncrement
+	jumpifabsent BS_TARGET, BattleScript_StupifyLoopIncrement
+	jumpifvolatile BS_TARGET, VOLATILE_SUBSTITUTE, BattleScript_StupifyLoopIncrement
+	jumpifstupifyabilityprevented
+BattleScript_StupifyEffect:
+	copybyte sBATTLER, gBattlerAttacker
+	setstatchanger STAT_SPATK, 1, TRUE
+	statbuffchange BS_TARGET, STAT_CHANGE_NOT_PROTECT_AFFECTED | STAT_CHANGE_ALLOW_PTR, BattleScript_StupifyLoopIncrement
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_CHANGE, BattleScript_IntimidateWontDecrease
+	printstring STRINGID_PKMNCUTSSPATTACKWITH
+BattleScript_StupifyLoopIncrement:
+	addbyte gBattlerTarget, 1
+	jumpifbytenotequal gBattlerTarget, gBattlersCount, BattleScript_StupifyLoop
+	copybyte sBATTLER, gBattlerAttacker
+	destroyabilitypopup
+	restoretarget
+	restoreattacker
+	pause B_WAIT_TIME_MED
+	end3
+
 BattleScript_SupersweetSyrupActivates::
  	savetarget
 	call BattleScript_AbilityPopUp

@@ -309,7 +309,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_MAGMA_ARMOR] =
     {
         .name = _("Magma Armor"),
-        .description = COMPOUND_STRING("Prevents freezing."),
+        .description = COMPOUND_STRING("Prevents freezing. Weakens Water."),
         .aiRating = 1,
         .breakable = TRUE,
     },
@@ -763,7 +763,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_LEAF_GUARD] =
     {
         .name = _("Leaf Guard"),
-        .description = COMPOUND_STRING("Blocks status in sunshine."),
+        .description = COMPOUND_STRING("Raises defense and blocks status in sunshine."),
         .aiRating = 2,
         .breakable = TRUE,
     },
@@ -1006,7 +1006,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_HEAVY_METAL] =
     {
         .name = _("Heavy Metal"),
-        .description = COMPOUND_STRING("Doubles weight."),
+        .description = COMPOUND_STRING("x2 weight, weakens Fighting."),
         .aiRating = -1,
         .breakable = TRUE,
     },
@@ -1014,7 +1014,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_LIGHT_METAL] =
     {
         .name = _("Light Metal"),
-        .description = COMPOUND_STRING("Halves weight."),
+        .description = COMPOUND_STRING("x0.5 weight, weakens Ground."),
         .aiRating = 2,
         .breakable = TRUE,
     },
@@ -2412,4 +2412,71 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .cantBeSwapped = TRUE,
         .cantBeTraced = TRUE,
     },
+
+    //DRN Custom Abilities
+
+    [ABILITY_STUPIFY] =
+    {
+        .name = _("Stupify"),
+        .description = COMPOUND_STRING("Lowers the foe's Special Attack."),
+        .aiRating = 7,
+    },
+
+    [ABILITY_QUEEN_OF_BUGS] =
+    {
+        .name = _("Queen of Bugs"),
+        .description = COMPOUND_STRING("Draws in Bug attacks, raising Defense."),
+        .aiRating = 7,
+    },
+
+    [ABILITY_GLACIAL_FORCE] =
+    {
+        .name = _("GLACIAL Force"),
+        .description = COMPOUND_STRING("Powers up in a snowstorm."),
+        .aiRating = 4,
+    },
+
+    [ABILITY_FOG_POWER] =
+    {
+        .name = _("Fog Power"),
+        .description = COMPOUND_STRING("Powers up in fog."),
+        .aiRating = 4,
+    },
+
+    [ABILITY_MISTY_SHROUD] =
+    {
+        .name = _("Misty Shroud"),
+        .description = COMPOUND_STRING("Ups Sp. Defense in fog."),
+        .aiRating = 2,
+        .breakable = TRUE,
+    },
+
+    [ABILITY_AIR_BUBBLE] =
+    {
+        .name = _("Air Bubble"),
+        .description = COMPOUND_STRING("Guards from wind and powers Fly."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_VERDANT_DASH] =
+    {
+        .name = _("Verdant Dash"),
+        .description = COMPOUND_STRING("Faster on grass."),
+        .aiRating = 4,
+    },
+
+    [ABILITY_MIST_DRIFT] =
+    {
+        .name = _("Mist Drift"),
+        .description = COMPOUND_STRING("Faster in the mist."),
+        .aiRating = 4,
+    },
+
+    [ABILITY_NEURAL_RUSH] =
+    {
+        .name = _("Neural Rush"),
+        .description = COMPOUND_STRING("Faster when weird."),
+        .aiRating = 4,
+    },
+
 };

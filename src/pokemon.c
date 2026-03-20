@@ -4421,6 +4421,8 @@ bool32 DoesMonMeetAdditionalConditions(struct Pokemon *mon, const struct Evoluti
     u32 friendship = GetMonData(mon, MON_DATA_FRIENDSHIP, 0);
     u32 attack = GetMonData(mon, MON_DATA_ATK, 0);
     u32 defense = GetMonData(mon, MON_DATA_DEF, 0);
+    u32 spattack = GetMonData(mon, MON_DATA_SPATK, 0);
+    u32 spdefense = GetMonData(mon, MON_DATA_SPDEF, 0);
     u32 personality = GetMonData(mon, MON_DATA_PERSONALITY, 0);
     u16 upperPersonality = personality >> 16;
     u32 weather = GetCurrentWeather();
@@ -4715,6 +4717,23 @@ bool32 DoesMonMeetAdditionalConditions(struct Pokemon *mon, const struct Evoluti
             break;
         case IF_NOT_REGION:
             if (GetCurrentRegion() != params[i].arg1)
+                currentCondition = TRUE;
+            break;
+        // DRN custom reasons
+        case IF_ATK_GT_SPATK:
+            if (attack > spattack)
+                currentCondition = TRUE;
+            break;
+        case IF_SPATK_GT_ATK:
+            if (spattack > attack)
+                currentCondition = TRUE;
+            break;
+        case IF_DEF_GT_SPDEF:
+            if (defense > spdefense)
+                currentCondition = TRUE;
+            break;
+        case IF_DEF_LT_SPDEF:
+            if (defense < spdefense)
                 currentCondition = TRUE;
             break;
         case CONDITIONS_END:
