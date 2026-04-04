@@ -6066,6 +6066,12 @@ s32 BattlerBenefitsFromAbilityScore(u32 battler, enum Ability ability, struct Ai
          || HasMoveWithLowAccuracy(battler, RIGHT_FOE(battler), 90, FALSE))
             return GOOD_EFFECT;
         break;
+    //DRN Keen eye also boosts accuracy of moves
+    case ABILITY_KEEN_EYE:
+        if (HasMoveWithLowAccuracy(battler, LEFT_FOE(battler), 90, FALSE)
+         || HasMoveWithLowAccuracy(battler, RIGHT_FOE(battler), 90, FALSE))
+            return GOOD_EFFECT;
+        break;
     case ABILITY_CONTRARY:
         if (HasMoveThatLowersOwnStats(battler))
             return BEST_EFFECT;

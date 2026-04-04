@@ -844,8 +844,9 @@ extern const u8 BattleScript_MetronomeAttackstring[];
 extern const u8 BattleScript_SleepTalkAttackstring[];
 extern const u8 BattleScript_NaturePowerAttackstring[];
 extern const u8 BattleScript_PokemonCantUseTheMove[];
-extern const u8 BattleScript_StupifyActivates[]; //DRN Stupify
-extern const u8 BattleScript_StealthRockBroken[]; //DRN rock types break stealth rocks
-extern const u8 BattleScript_SpikesBroken[]; //DRN ground types break spikes
+extern const u8 BattleScript_StupifyActivates[]; //Bubba Stupify
+extern const u8 BattleScript_StealthRockBroken[]; //Bubba rock types break stealth rocks
+extern const u8 BattleScript_SpikesBroken[]; //Bubba ground types break spikes
+extern const u8 BattleScript_EffectMeditate[]; //Bubba Meditate grants attack and special defense
 
 #endif // GUARD_BATTLE_SCRIPTS_H

@@ -2637,12 +2637,12 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Meditate"),
         .description = COMPOUND_STRING(
             "Meditates in a peaceful\n"
-            "fashion to raise Attack."),
-        .effect = EFFECT_ATTACK_UP,
+            "fashion, raises Atk and Sp Def."),
+        .effect = EFFECT_MEDITATE,
         .power = 0,
         .type = TYPE_PSYCHIC,
         .accuracy = 0,
-        .pp = 40,
+        .pp = 20,
         .target = MOVE_TARGET_USER,
         .priority = 0,
         .category = DAMAGE_CATEGORY_STATUS,
@@ -21297,9 +21297,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_MalignantChain,
     },
 
-    //DRN Custom Moves
+    //Bubba Custom Moves
 
-    //DRN inflict frostbite
+    //Bubba inflict frostbite
     [MOVE_CHILLING_WIND] =
     {
         .name = COMPOUND_STRING("Chilling Wind"),
@@ -21325,7 +21325,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .validApprenticeMove = TRUE,
     },
 
-    //DRN special defense body press
+    //Bubba special defense body press
     [MOVE_MIND_PRESS] =
     {
         .name = COMPOUND_STRING("Mind Press"),
@@ -21348,6 +21348,34 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestComboStarterId = 0,
         .contestComboMoves = {0},
         .battleAnimScript = gBattleAnimMove_BodyPress,
+    },
+
+    [MOVE_FROZEN_GRASP] =
+    {
+        .name = COMPOUND_STRING("Frozen Grasp"),
+        .description = COMPOUND_STRING(
+            "A chilling attack that may\n"
+            "cause frostbite."),
+        .effect = EFFECT_HIT,
+        .power = 110,
+        .type = TYPE_GHOST,
+        .accuracy = 70,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .alwaysHitsInHailSnow = B_BLIZZARD_HAIL >= GEN_4,
+        .accuracy50InSun = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_FREEZE_OR_FROSTBITE,
+            .chance = 30,
+        }),
+        .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_BETTER_WHEN_AUDIENCE_EXCITED : CONTEST_EFFECT_STARTLE_PREV_MONS,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_HAIL},
+        .battleAnimScript = gBattleAnimMove_IcePunch,
+        .validApprenticeMove = TRUE,
     },
 
     // Z-Moves

@@ -1014,3 +1014,42 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 	.string "I have something to show you.\n"
 	.string "Let's go to my LAB.$"
 
+Littleroot_EventScript_Hackerman::
+	msgbox Littleroot_Text_Hackerman, MSGBOX_NPC
+	giveitem ITEM_RARE_CANDY, 99
+	release
+	end
+
+Littleroot_Text_Hackerman:
+	.string "Take these!\p"
+	.string "If you ever want more,\n"
+	.string "come talk to me again.$"
+
+LevelCaps_EventScript_Ask::
+    lockall
+    msgbox LevelCaps_Text_Ask, MSGBOX_YESNO
+    goto_if_eq VAR_RESULT, YES, LevelCaps_EventScript_Enable
+    goto_if_eq VAR_RESULT, NO, LevelCaps_EventScript_Disable
+    end
+
+LevelCaps_EventScript_Enable::
+    setflag FLAG_LEVEL_CAPS_ON
+    msgbox LevelCaps_Text_Enabled, MSGBOX_DEFAULT
+    releaseall
+    end
+
+LevelCaps_EventScript_Disable::
+    clearflag FLAG_LEVEL_CAPS_ON
+    msgbox LevelCaps_Text_Disabled, MSGBOX_DEFAULT
+    releaseall
+    end
+
+LevelCaps_Text_Ask:
+    .string "Would you like to enable\n"
+    .string "level caps?$"
+
+LevelCaps_Text_Enabled:
+    .string "Level caps are now ON.$"
+
+LevelCaps_Text_Disabled:
+    .string "Level caps are now OFF.$"

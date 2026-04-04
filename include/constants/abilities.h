@@ -344,6 +344,7 @@ enum __attribute__((packed)) Ability
     ABILITY_FOG_POWER = 318,
     ABILITY_MISTY_SHROUD = 319,
     ABILITY_MYSTIC_FIELD = 320,
+    ABILITY_EVO_WISH = 321,
 
 
     ABILITIES_COUNT_GEN9,

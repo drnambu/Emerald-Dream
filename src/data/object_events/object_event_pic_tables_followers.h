@@ -1227,12 +1227,32 @@ static const struct SpriteFrameImage sPicTable_Jolteon[] = {
 static const struct SpriteFrameImage sPicTable_Flareon[] = {
     overworld_ascending_frames(gObjectEventPic_Flareon, 4, 4),
 };
+//Bubba
+static const struct SpriteFrameImage sPicTable_Draceon[] = {
+    overworld_ascending_frames(gObjectEventPic_Draceon, 4, 4),
+};
+//Bubba
+static const struct SpriteFrameImage sPicTable_Ferreon[] = {
+    overworld_ascending_frames(gObjectEventPic_Ferreon, 4, 4),
+};
+//Bubba
+static const struct SpriteFrameImage sPicTable_Rocheon[] = {
+    overworld_ascending_frames(gObjectEventPic_Rocheon, 4, 4),
+};
 #if P_GEN_2_CROSS_EVOS
 static const struct SpriteFrameImage sPicTable_Espeon[] = {
     overworld_ascending_frames(gObjectEventPic_Espeon, 4, 4),
 };
 static const struct SpriteFrameImage sPicTable_Umbreon[] = {
     overworld_ascending_frames(gObjectEventPic_Umbreon, 4, 4),
+};
+//Bubba
+static const struct SpriteFrameImage sPicTable_Strikeon[] = {
+    overworld_ascending_frames(gObjectEventPic_Strikeon, 4, 4),
+};
+//Bubba
+static const struct SpriteFrameImage sPicTable_Noxeon[] = {
+    overworld_ascending_frames(gObjectEventPic_Noxeon, 4, 4),
 };
 #endif //P_GEN_2_CROSS_EVOS
 
@@ -1243,11 +1263,23 @@ static const struct SpriteFrameImage sPicTable_Leafeon[] = {
 static const struct SpriteFrameImage sPicTable_Glaceon[] = {
     overworld_ascending_frames(gObjectEventPic_Glaceon, 4, 4),
 };
+//Bubba
+static const struct SpriteFrameImage sPicTable_Terreon[] = {
+    overworld_ascending_frames(gObjectEventPic_Terreon, 4, 4),
+};
+//Bubba
+static const struct SpriteFrameImage sPicTable_Grubbeon[] = {
+    overworld_ascending_frames(gObjectEventPic_Grubbeon, 4, 4),
+};
 #endif //P_GEN_4_CROSS_EVOS
 
 #if P_GEN_6_CROSS_EVOS
 static const struct SpriteFrameImage sPicTable_Sylveon[] = {
     overworld_ascending_frames(gObjectEventPic_Sylveon, 4, 4),
+};
+//Bubba
+static const struct SpriteFrameImage sPicTable_Spookeon[] = {
+    overworld_ascending_frames(gObjectEventPic_Spookeon, 4, 4),
 };
 #endif //P_GEN_6_CROSS_EVOS
 #endif //P_FAMILY_EEVEE
@@ -2771,6 +2803,10 @@ static const struct SpriteFrameImage sPicTable_CastformRainy[] = {
 };
 static const struct SpriteFrameImage sPicTable_CastformSnowy[] = {
     overworld_ascending_frames(gObjectEventPic_CastformSnowy, 4, 4),
+};
+//Bubba
+static const struct SpriteFrameImage sPicTable_CastformSandy[] = {
+    overworld_ascending_frames(gObjectEventPic_CastformSandy, 4, 4),
 };
 #endif //P_FAMILY_CASTFORM
 

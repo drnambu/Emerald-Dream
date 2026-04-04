@@ -9,7 +9,7 @@ u32 GetCurrentLevelCap(void)
 {
     static const u32 sLevelCapFlagMap[][2] =
     {
-        {FLAG_BADGE01_GET, 15},
+        {FLAG_BADGE01_GET, 5},
         {FLAG_BADGE02_GET, 19},
         {FLAG_BADGE03_GET, 24},
         {FLAG_BADGE04_GET, 29},
@@ -22,7 +22,11 @@ u32 GetCurrentLevelCap(void)
 
     u32 i;
 
-    if (B_LEVEL_CAP_TYPE == LEVEL_CAP_FLAG_LIST)
+    // Bubba: check if caps are disabled
+    if (!FlagGet(FLAG_LEVEL_CAPS_ON))
+        return MAX_LEVEL; // 100
+
+    else if (B_LEVEL_CAP_TYPE == LEVEL_CAP_FLAG_LIST)
     {
         for (i = 0; i < ARRAY_COUNT(sLevelCapFlagMap); i++)
         {

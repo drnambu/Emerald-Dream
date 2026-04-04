@@ -1665,12 +1665,21 @@
 #define SPECIES_DRAMPA_MEGA                             1548
 #define SPECIES_FALINKS_MEGA                            1549
 //DRN Custom Pokemon
-#define SPECIES_MINIGROSS                               1549
-#define SPECIES_COMBICADE                               1550
-#define SPECIES_SLOWKING_MEGA                           1551
+#define SPECIES_MINIGROSS                               1550
+#define SPECIES_COMBICADE                               1551
+#define SPECIES_SLOWKING_MEGA                           1552
+#define SPECIES_CASTFORM_SANDY                          1553
+#define SPECIES_DRACEON                                 1554
+#define SPECIES_ROCHEON                                 1555
+#define SPECIES_FERREON                                 1556
+#define SPECIES_STRIKEON                                1557
+#define SPECIES_NOXEON                                  1558
+#define SPECIES_GRUBBEON                                1559
+#define SPECIES_TERREON                                 1560
+#define SPECIES_SPOOKEON                                1561
 
 
-#define SPECIES_EGG                                     (SPECIES_SLOWKING_MEGA + 1)
+#define SPECIES_EGG                                     (SPECIES_SPOOKEON + 1)
 
 #define NUM_SPECIES SPECIES_EGG
 

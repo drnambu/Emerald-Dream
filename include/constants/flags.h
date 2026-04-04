@@ -184,14 +184,14 @@
 #define FLAG_CUTE_PAINTING_MADE              0xA2
 #define FLAG_SMART_PAINTING_MADE             0xA3
 #define FLAG_TOUGH_PAINTING_MADE             0xA4
-#define FLAG_RECEIVED_TM_ROCK_TOMB           0xA5
-#define FLAG_RECEIVED_TM_BULK_UP             0xA6
-#define FLAG_RECEIVED_TM_SHOCK_WAVE          0xA7
-#define FLAG_RECEIVED_TM_OVERHEAT            0xA8
-#define FLAG_RECEIVED_TM_FACADE              0xA9
-#define FLAG_RECEIVED_TM_AERIAL_ACE          0xAA
-#define FLAG_RECEIVED_TM_CALM_MIND           0xAB
-#define FLAG_RECEIVED_TM_WATER_PULSE         0xAC
+#define FLAG_RECEIVED_TM_ROCK_TOMB           0xA5 //Bubba reused for Helping Hand in Rustboro gym
+#define FLAG_RECEIVED_TM_BULK_UP             0xA6 //Bubba reused for Protect in Dewford gym
+#define FLAG_RECEIVED_TM_SHOCK_WAVE          0xA7 //Bubba reused for Thunder Wave in Mauville gym
+#define FLAG_RECEIVED_TM_OVERHEAT            0xA8 //Bubba reused for Haze in Lavaridge gym
+#define FLAG_RECEIVED_TM_FACADE              0xA9 //Bubba reused for Coaching in Petalburg gym
+#define FLAG_RECEIVED_TM_AERIAL_ACE          0xAA //Bubba reused for Agility in Fortree gym
+#define FLAG_RECEIVED_TM_CALM_MIND           0xAB //Bubba reused for Trick Room in Mossdeep gym
+#define FLAG_RECEIVED_TM_WATER_PULSE         0xAC //Bubba reused for Tailwind in Sootopolis gym
 #define FLAG_HIDE_SECRET_BASE_TRAINER        0xAD
 #define FLAG_DECORATION_1                    0xAE
 #define FLAG_DECORATION_2                    0xAF
@@ -252,10 +252,10 @@
 #define FLAG_REGI_DOORS_OPENED               0xE4
 #define FLAG_RECEIVED_TM_RETURN              0xE5
 #define FLAG_RECEIVED_TM_SLUDGE_BOMB         0xE6
-#define FLAG_RECEIVED_TM_ROAR                0xE7
+#define FLAG_RECEIVED_TM_ROAR                0xE7 //Bubba reused for TM Agility on Route 114
 #define FLAG_RECEIVED_TM_GIGA_DRAIN          0xE8
 
-#define FLAG_UNUSED_0x0E9                    0xE9 // Unused Flag
+#define FLAG_LEVEL_CAPS_ON                   0xE9 // Bubba level cap flag
 
 #define FLAG_RECEIVED_TM_REST                0xEA
 #define FLAG_RECEIVED_TM_ATTRACT             0xEB
@@ -1083,11 +1083,11 @@
 #define FLAG_ITEM_ROUTE_120_NUGGET                                  0x406
 #define FLAG_ITEM_ROUTE_120_FULL_HEAL                               0x407
 #define FLAG_ITEM_ROUTE_123_CALCIUM                                 0x408
-#define FLAG_ITEM_ROUTE_123_RARE_CANDY                              0x409 // Unused Flag, leftover from R/S. In Emerald this is a hidden item and uses a different flag
+#define FLAG_ITEM_ROUTE_111_SAFETY_GOOGLES                          0x409 //Bubba  old comment: Unused Flag, leftover from R/S. In Emerald this is a hidden item and uses a different flag
 #define FLAG_ITEM_ROUTE_127_ZINC                                    0x40A
-#define FLAG_ITEM_ROUTE_127_CARBOS                                  0x40B
+#define FLAG_ITEM_ROUTE_127_CARBOS                                  0x40B //Bubba reused for Thunder
 #define FLAG_ITEM_ROUTE_132_RARE_CANDY                              0x40C
-#define FLAG_ITEM_ROUTE_133_BIG_PEARL                               0x40D
+#define FLAG_ITEM_ROUTE_133_BIG_PEARL                               0x40D //Bubba reused for TM Blizzard
 #define FLAG_ITEM_ROUTE_133_STAR_PIECE                              0x40E
 #define FLAG_ITEM_PETALBURG_CITY_MAX_REVIVE                         0x40F
 #define FLAG_ITEM_PETALBURG_CITY_ETHER                              0x410
@@ -1095,7 +1095,7 @@
 #define FLAG_ITEM_LILYCOVE_CITY_MAX_REPEL                           0x412
 #define FLAG_ITEM_MOSSDEEP_CITY_NET_BALL                            0x413
 #define FLAG_ITEM_METEOR_FALLS_1F_1R_TM_IRON_TAIL                   0x414
-#define FLAG_ITEM_METEOR_FALLS_1F_1R_FULL_HEAL                      0x415
+#define FLAG_ITEM_METEOR_FALLS_1F_1R_FULL_HEAL                      0x415 //Bubba reused for TM Calm Mind
 #define FLAG_ITEM_METEOR_FALLS_1F_1R_MOON_STONE                     0x416
 #define FLAG_ITEM_METEOR_FALLS_1F_1R_PP_UP                          0x417
 #define FLAG_ITEM_RUSTURF_TUNNEL_POKE_BALL                          0x418
@@ -1107,7 +1107,7 @@
 #define FLAG_ITEM_GRANITE_CAVE_B2F_RARE_CANDY                       0x41E
 #define FLAG_ITEM_PETALBURG_WOODS_X_ATTACK                          0x41F
 #define FLAG_ITEM_PETALBURG_WOODS_GREAT_BALL                        0x420
-#define FLAG_ITEM_ROUTE_104_POKE_BALL                               0x421
+#define FLAG_ITEM_ROUTE_104_POKE_BALL                               0x421 //Bubba replaced the pokeball with TM Struggle Bug - did not change flag name
 #define FLAG_ITEM_PETALBURG_WOODS_ETHER                             0x422
 #define FLAG_ITEM_MAGMA_HIDEOUT_3F_3R_ECAPE_ROPE                    0x423
 #define FLAG_ITEM_TRICK_HOUSE_PUZZLE_1_ORANGE_MAIL                  0x424
@@ -1124,21 +1124,21 @@
 #define FLAG_ITEM_AQUA_HIDEOUT_B1F_MAX_ELIXIR                       0x42F
 #define FLAG_ITEM_AQUA_HIDEOUT_B2F_NEST_BALL                        0x430
 #define FLAG_ITEM_MT_PYRE_EXTERIOR_MAX_POTION                       0x431
-#define FLAG_ITEM_MT_PYRE_EXTERIOR_TM_SKILL_SWAP                    0x432
+#define FLAG_ITEM_MT_PYRE_EXTERIOR_TM_SKILL_SWAP                    0x432 //Bubba reused for Power Gem
 #define FLAG_ITEM_NEW_MAUVILLE_ULTRA_BALL                           0x433
 #define FLAG_ITEM_NEW_MAUVILLE_ESCAPE_ROPE                          0x434
 #define FLAG_ITEM_ABANDONED_SHIP_HIDDEN_FLOOR_ROOM_6_LUXURY_BALL    0x435
 #define FLAG_ITEM_ABANDONED_SHIP_HIDDEN_FLOOR_ROOM_2_SCANNER        0x436
 #define FLAG_ITEM_SCORCHED_SLAB_TM_SUNNY_DAY                        0x437
-#define FLAG_ITEM_METEOR_FALLS_B1F_2R_TM_DRAGON_CLAW                0x438
-#define FLAG_ITEM_SHOAL_CAVE_ENTRANCE_BIG_PEARL                     0x439
+#define FLAG_ITEM_METEOR_FALLS_B1F_2R_TM_DRAGON_CLAW                0x438 //Bubba reused for Foul Play
+#define FLAG_ITEM_SHOAL_CAVE_ENTRANCE_BIG_PEARL                     0x439 //Bubba removed reference, REVIEW, free flag
 #define FLAG_ITEM_SHOAL_CAVE_INNER_ROOM_RARE_CANDY                  0x43A
 #define FLAG_ITEM_SHOAL_CAVE_STAIRS_ROOM_ICE_HEAL                   0x43B
-#define FLAG_ITEM_VICTORY_ROAD_1F_MAX_ELIXIR                        0x43C
+#define FLAG_ITEM_VICTORY_ROAD_1F_MAX_ELIXIR                        0x43C //Bubba reuused for TM Earth Power
 #define FLAG_ITEM_VICTORY_ROAD_1F_PP_UP                             0x43D
 #define FLAG_ITEM_VICTORY_ROAD_B1F_TM_PSYCHIC                       0x43E
 #define FLAG_ITEM_VICTORY_ROAD_B1F_FULL_RESTORE                     0x43F
-#define FLAG_ITEM_VICTORY_ROAD_B2F_FULL_HEAL                        0x440
+#define FLAG_ITEM_VICTORY_ROAD_B2F_FULL_HEAL                        0x440 //Bubba reused for TM Body Press
 #define FLAG_ITEM_MT_PYRE_6F_TM_SHADOW_BALL                         0x441
 #define FLAG_ITEM_SEAFLOOR_CAVERN_ROOM_9_TM_EARTHQUAKE              0x442
 #define FLAG_ITEM_FIERY_PATH_TM_TOXIC                               0x443
@@ -1155,7 +1155,7 @@
 #define FLAG_ITEM_ABANDONED_SHIP_HIDDEN_FLOOR_ROOM_1_TM_RAIN_DANCE  0x44E
 #define FLAG_ITEM_ROUTE_121_CARBOS                                  0x44F
 #define FLAG_ITEM_ROUTE_123_ULTRA_BALL                              0x450
-#define FLAG_ITEM_ROUTE_126_GREEN_SHARD                             0x451
+#define FLAG_ITEM_ROUTE_126_GREEN_SHARD                             0x451 //Bubba reused for TM Fire Blast
 #define FLAG_ITEM_ROUTE_119_HYPER_POTION_2                          0x452
 #define FLAG_ITEM_ROUTE_120_HYPER_POTION                            0x453
 #define FLAG_ITEM_ROUTE_120_NEST_BALL                               0x454
@@ -1164,38 +1164,38 @@
 #define FLAG_ITEM_FIERY_PATH_FIRE_STONE                             0x457
 #define FLAG_ITEM_SHOAL_CAVE_ICE_ROOM_TM_HAIL                       0x458
 #define FLAG_ITEM_SHOAL_CAVE_ICE_ROOM_NEVER_MELT_ICE                0x459
-#define FLAG_ITEM_ROUTE_103_GUARD_SPEC                              0x45A
+#define FLAG_ITEM_ROUTE_103_GUARD_SPEC                              0x45A //Bubba reused for TM Snarl
 #define FLAG_ITEM_ROUTE_104_X_ACCURACY                              0x45B
 #define FLAG_ITEM_MAUVILLE_CITY_X_SPEED                             0x45C
 #define FLAG_ITEM_PETALBURG_WOODS_PARALYZE_HEAL                     0x45D
-#define FLAG_ITEM_ROUTE_115_GREAT_BALL                              0x45E
-#define FLAG_ITEM_SAFARI_ZONE_NORTH_CALCIUM                         0x45F
+#define FLAG_ITEM_ROUTE_115_GREAT_BALL                              0x45E //Bubba reused for TM Bulk Up
+#define FLAG_ITEM_SAFARI_ZONE_NORTH_CALCIUM                         0x45F //Bubba reused for TM Stomping Tantrum
 #define FLAG_ITEM_MT_PYRE_3F_SUPER_REPEL                            0x460
 #define FLAG_ITEM_ROUTE_118_HYPER_POTION                            0x461
 #define FLAG_ITEM_NEW_MAUVILLE_FULL_HEAL                            0x462
 #define FLAG_ITEM_NEW_MAUVILLE_PARALYZE_HEAL                        0x463
 #define FLAG_ITEM_AQUA_HIDEOUT_B1F_MASTER_BALL                      0x464
-#define FLAG_ITEM_OLD_MAGMA_HIDEOUT_B1F_MASTER_BALL                 0x465 // Unused Flag, leftover from the Ruby Magma hideout
-#define FLAG_ITEM_OLD_MAGMA_HIDEOUT_B1F_MAX_ELIXIR                  0x466 // Unused Flag, leftover from the Ruby Magma hideout
-#define FLAG_ITEM_OLD_MAGMA_HIDEOUT_B2F_NEST_BALL                   0x467 // Unused Flag, leftover from the Ruby Magma hideout
-#define FLAG_UNUSED_0x468                                           0x468 // Unused Flag
+#define FLAG_ITEM_RUSTURF_TUNNEL_HEAVY_DUTY_BOOTS                   0x465 // Bubba old comment: Unused Flag, leftover from the Ruby Magma hideout
+#define FLAG_ITEM_FALLARBOR_EVIOLITE                                0x466 // Bubba old comment: Unused Flag, leftover from the Ruby Magma hideout
+#define FLAG_ITEM_DEWFORD_PUNCHING_GLOVE                            0x467 // Bubba old comment: Unused Flag, leftover from the Ruby Magma hideout
+#define FLAG_ITEM_MAUVILLE_CITY_LEFTOVERS                           0x468 // Bubba old comment: Unused Flag
 #define FLAG_ITEM_MT_PYRE_2F_ULTRA_BALL                             0x469
 #define FLAG_ITEM_MT_PYRE_4F_SEA_INCENSE                            0x46A
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_WEST_MAX_REVIVE                 0x46B
 #define FLAG_ITEM_AQUA_HIDEOUT_B1F_NUGGET                           0x46C
-#define FLAG_ITEM_MOSSDEEP_STEVENS_HOUSE_HM08                       0x46D // Unused Flag, leftover from R/S. HM08 is given to the player directly in Emerald
+#define FLAG_ITEM_ROUTE_117_LUCKY_EGG                               0x46D // Bubba old comment: Unused Flag, leftover from R/S. HM08 is given to the player directly in Emerald
 #define FLAG_ITEM_ROUTE_119_NUGGET                                  0x46E
 #define FLAG_ITEM_ROUTE_104_POTION                                  0x46F
-#define FLAG_UNUSED_0x470                                           0x470 // Unused Flag
+#define FLAG_ITEM_ROUTE_119_ROCKY_HELMET                            0x470 // Bubba old comment: Unused Flag
 #define FLAG_ITEM_ROUTE_103_PP_UP                                   0x471
-#define FLAG_UNUSED_0x472                                           0x472 // Unused Flag
+#define FLAG_ITEM_ROUTE_120_SCOPE_LENS                              0x472 // Bubba old comment: Unused Flag
 #define FLAG_ITEM_ROUTE_108_STAR_PIECE                              0x473
 #define FLAG_ITEM_ROUTE_109_POTION                                  0x474
 #define FLAG_ITEM_ROUTE_110_ELIXIR                                  0x475
 #define FLAG_ITEM_ROUTE_111_ELIXIR                                  0x476
 #define FLAG_ITEM_ROUTE_113_HYPER_POTION                            0x477
 #define FLAG_ITEM_ROUTE_115_HEAL_POWDER                             0x478
-#define FLAG_UNUSED_0x479                                           0x479 // Unused Flag
+#define FLAG_ITEM_MT_PYRE_LIFE_ORB                                  0x479 // Bubba old comment: Unused Flag
 #define FLAG_ITEM_ROUTE_116_POTION                                  0x47A
 #define FLAG_ITEM_ROUTE_119_ELIXIR_2                                0x47B
 #define FLAG_ITEM_ROUTE_120_REVIVE                                  0x47C
@@ -1214,62 +1214,61 @@
 #define FLAG_ITEM_ROUTE_115_PP_UP                                   0x489
 #define FLAG_ITEM_ARTISAN_CAVE_B1F_HP_UP                            0x48A
 #define FLAG_ITEM_ARTISAN_CAVE_1F_CARBOS                            0x48B
-#define FLAG_ITEM_MAGMA_HIDEOUT_2F_2R_MAX_ELIXIR                    0x48C
-#define FLAG_ITEM_MAGMA_HIDEOUT_2F_2R_FULL_RESTORE                  0x48D
+#define FLAG_ITEM_MAGMA_HIDEOUT_2F_2R_MAX_ELIXIR                    0x48C //Bubba reused for sleep talk
+#define FLAG_ITEM_MAGMA_HIDEOUT_2F_2R_FULL_RESTORE                  0x48D //Bubba reused for spikes
 #define FLAG_ITEM_MAGMA_HIDEOUT_3F_1R_NUGGET                        0x48E
 #define FLAG_ITEM_MAGMA_HIDEOUT_3F_2R_PP_MAX                        0x48F
 #define FLAG_ITEM_MAGMA_HIDEOUT_4F_MAX_REVIVE                       0x490
 #define FLAG_ITEM_SAFARI_ZONE_NORTH_EAST_NUGGET                     0x491
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_EAST_BIG_PEARL                  0x492
+#define FLAG_ITEM_MAGMA_HIDEOUT_ASSUALT_VEST                        0x493 // Bubba old comment: Unused Flag
 
-#define FLAG_UNUSED_0x493                                           0x493 // Unused Flag
-#define FLAG_UNUSED_0x494                                           0x494 // Unused Flag
-#define FLAG_UNUSED_0x495                                           0x495 // Unused Flag
-#define FLAG_UNUSED_0x496                                           0x496 // Unused Flag
-#define FLAG_UNUSED_0x497                                           0x497 // Unused Flag
-#define FLAG_UNUSED_0x498                                           0x498 // Unused Flag
-#define FLAG_UNUSED_0x499                                           0x499 // Unused Flag
-#define FLAG_UNUSED_0x49A                                           0x49A // Unused Flag
-#define FLAG_UNUSED_0x49B                                           0x49B // Unused Flag
-#define FLAG_UNUSED_0x49C                                           0x49C // Unused Flag
-#define FLAG_UNUSED_0x49D                                           0x49D // Unused Flag
-#define FLAG_UNUSED_0x49E                                           0x49E // Unused Flag
-#define FLAG_UNUSED_0x49F                                           0x49F // Unused Flag
-#define FLAG_UNUSED_0x4A0                                           0x4A0 // Unused Flag
-#define FLAG_UNUSED_0x4A1                                           0x4A1 // Unused Flag
-#define FLAG_UNUSED_0x4A2                                           0x4A2 // Unused Flag
-#define FLAG_UNUSED_0x4A3                                           0x4A3 // Unused Flag
-#define FLAG_UNUSED_0x4A4                                           0x4A4 // Unused Flag
-#define FLAG_UNUSED_0x4A5                                           0x4A5 // Unused Flag
-#define FLAG_UNUSED_0x4A6                                           0x4A6 // Unused Flag
-#define FLAG_UNUSED_0x4A7                                           0x4A7 // Unused Flag
-#define FLAG_UNUSED_0x4A8                                           0x4A8 // Unused Flag
-#define FLAG_UNUSED_0x4A9                                           0x4A9 // Unused Flag
-#define FLAG_UNUSED_0x4AA                                           0x4AA // Unused Flag
-#define FLAG_UNUSED_0x4AB                                           0x4AB // Unused Flag
-#define FLAG_UNUSED_0x4AC                                           0x4AC // Unused Flag
-#define FLAG_UNUSED_0x4AD                                           0x4AD // Unused Flag
-#define FLAG_UNUSED_0x4AE                                           0x4AE // Unused Flag
-#define FLAG_UNUSED_0x4AF                                           0x4AF // Unused Flag
-#define FLAG_UNUSED_0x4B0                                           0x4B0 // Unused Flag
-#define FLAG_UNUSED_0x4B1                                           0x4B1 // Unused Flag
-#define FLAG_UNUSED_0x4B2                                           0x4B2 // Unused Flag
-#define FLAG_UNUSED_0x4B3                                           0x4B3 // Unused Flag
-#define FLAG_UNUSED_0x4B4                                           0x4B4 // Unused Flag
-#define FLAG_UNUSED_0x4B5                                           0x4B5 // Unused Flag
-#define FLAG_UNUSED_0x4B6                                           0x4B6 // Unused Flag
-#define FLAG_UNUSED_0x4B7                                           0x4B7 // Unused Flag
-#define FLAG_UNUSED_0x4B8                                           0x4B8 // Unused Flag
-#define FLAG_UNUSED_0x4B9                                           0x4B9 // Unused Flag
-#define FLAG_UNUSED_0x4BA                                           0x4BA // Unused Flag
-#define FLAG_UNUSED_0x4BB                                           0x4BB // Unused Flag
-#define FLAG_UNUSED_0x4BC                                           0x4BC // Unused Flag
-#define FLAG_UNUSED_0x4BD                                           0x4BD // Unused Flag
-#define FLAG_UNUSED_0x4BE                                           0x4BE // Unused Flag
-#define FLAG_UNUSED_0x4BF                                           0x4BF // Unused Flag
-#define FLAG_UNUSED_0x4C0                                           0x4C0 // Unused Flag
-#define FLAG_UNUSED_0x4C1                                           0x4C1 // Unused Flag
-#define FLAG_UNUSED_0x4C2                                           0x4C2 // Unused Flag
+#define FLAG_ITEM_TOXIC_ORB                                         0x494 // Bubba old comment: Unused Flag
+#define FLAG_ITEM_FLAME_ORB                                         0x495 // Bubba old comment: Unused Flag
+#define FLAG_ITEM_COVERT_CLOAK                                      0x496 // Bubba old comment: Unused Flag
+#define FLAG_ITEM_CLEAR_AMULET                                      0x497 // Bubba old comment: Unused Flag
+#define FLAG_ITEM_WEAKNESS_POLICY                                   0x498 // Bubba old comment: Unused Flag
+#define FLAG_ITEM_UTILITY_UMBRELLA                                  0x499 // Bubba old comment: Unused Flag
+#define FLAG_ITEM_THROAT_SPRAY                                      0x49B // Bubba old comment: Unused Flag
+#define FLAG_ITEM_TERRAIN_EXTENDER                                  0x49C // Bubba old comment: Unused Flag
+#define FLAG_ITEM_LOARDED_DICE                                      0x49D // Bubba old comment: Unused Flag
+#define FLAG_ITEM_FOCUS_SASH                                        0x49E // Bubba old comment: Unused Flag
+#define FLAG_ITEM_TM_ICY_WIND                                       0x49F // Bubba old comment: Unused Flag
+#define FLAG_ITEM_YACHE_BERRY                                       0x4A0 // Bubba old comment: Unused Flag
+#define FLAG_ITEM_BIG_NUGGET                                        0x4A1 // Bubba old comment: Unused Flag
+#define FLAG_ITEM_HEAVY_BALL                                        0x4A2 // Bubba old comment: Unused Flag
+#define FLAG_ITEM_FAST_BALL                                         0x4A3 // Bubba - not implemented, old comment: Unused Flag 
+#define FLAG_ITEM_FRIEND_BALL                                       0x4A4 // Bubba - not implemented, old comment: Unused Flag 
+#define FLAG_ITEM_MOON_BALL                                         0x4A5 // Bubba - not implemented, old comment: Unused Flag 
+#define FLAG_ITEM_LURE_BALL                                         0x4A6 // Bubba - not implemented, old comment: Unused Flag 
+#define FLAG_ITEM_LEVEL_BALL                                        0x4A7 // Bubba - not implemented, old comment: Unused Flag 
+#define FLAG_ITEM_LOVE_BALL                                         0x4A8 // Bubba - not implemented, old comment: Unused Flag 
+#define FLAG_ITEM_DREAM_BALL                                        0x4A9 // Bubba - not implemented, old comment: Unused Flag 
+#define FLAG_ITEM_SPORT_BALL                                        0x4AA // Bubba - not implemented, old comment: Unused Flag 
+#define FLAG_ITEM_PARK_BALL                                         0x4AB // Bubba - not implemented, old comment: Unused Flag 
+#define FLAG_ITEM_BEAST_BALL                                        0x4AC // Bubba - not implemented, old comment: Unused Flag 
+#define FLAG_CHERISH_BALL                                           0x4AD // Bubba - not implemented, old comment: Unused Flag 
+#define FLAG_UNUSED_0x4AE                                           0x4AE // Unused Flag 
+#define FLAG_UNUSED_0x4AF                                           0x4AF // Unused Flag 
+#define FLAG_ITEM_TM_GRASSY_GLIDE                                   0x4B0 // Bubba old comment: Unused Flag
+#define FLAG_ITEM_TM_U_TURN                                         0x4B1 // Bubba old comment: Unused Flag
+#define FLAG_ITEM_TM_WEATHER_BALL                                   0x4B2 // Bubba old comment: Unused Flag
+#define FLAG_ITEM_TM_IMPRISON                                       0x4B3 // Bubba old comment: Unused Flag
+#define FLAG_ITEM_TM_ICE_SPINNER                                    0x4B4 // Bubba old comment: Unused Flag
+#define FLAG_ITEM_TM_BULLDOZE                                       0x4B5 // Bubba old comment: Unused Flag
+#define FLAG_ITEM_TM_NASTY_PLOT                                     0x4B6 // Bubba old comment: Unused Flag
+#define FLAG_ITEM_TM_SWORDS_DANCE                                   0x4B7 // Bubba old comment: Unused Flag
+#define FLAG_ITEM_TM_HEAT_WAVE                                      0x4B8 // Bubba old comment: Unused Flag
+#define FLAG_ITEM_ORAN_BERRY                                        0x4B9 // Bubba old comment: Unused Flag
+#define FLAG_ITEM_TM_POLLEN_PUFF                                    0x4BA // Bubba old comment: Unused Flag
+#define FLAG_ITEM_TM_PSYCHIC_FANGS                                  0x4BB // Bubba old comment: Unused Flag
+#define FLAG_ITEM_TM_BATON_PASS                                     0x4BC // Bubba old comment: Unused Flag
+#define FLAG_ITEM_TM_BRICK_BREAK                                    0x4BD // Bubba old comment: Unused Flag
+#define FLAG_ITEM_TM_TEMPER_FLARE                                   0x4BE // Bubba old comment: Unused Flag
+#define FLAG_ITEM_TM_ROCK_BLAST                                     0x4BF // Bubba old comment: Unused Flag
+#define FLAG_ITEM_TM_PLAY_ROUGH                                     0x4C0 // Bubba old comment: Unused Flag
+#define FLAG_ITEM_TM_WILL_O_WISP                                    0x4C1 // Bubba old comment: Unused Flag
+#define FLAG_ITEM_TM_BOLT_STRIKE                                    0x4C2 // Bubba old comment: Unused Flag
 #define FLAG_UNUSED_0x4C3                                           0x4C3 // Unused Flag
 #define FLAG_UNUSED_0x4C4                                           0x4C4 // Unused Flag
 #define FLAG_UNUSED_0x4C5                                           0x4C5 // Unused Flag

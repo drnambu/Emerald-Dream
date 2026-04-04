@@ -110,11 +110,12 @@ static const u8 sStarterLabelCoords[STARTER_MON_COUNT][2] =
     {8, 4},
 };
 
+//Bubba updated starter list
 static const u16 sStarterMon[STARTER_MON_COUNT] =
 {
-    SPECIES_TREECKO,
-    SPECIES_TORCHIC,
-    SPECIES_MUDKIP,
+    SPECIES_FROAKIE, //Treecko
+    SPECIES_SNIVY, //Torchic
+    SPECIES_FUECOCO, //Mudkip
 };
 
 static const struct BgTemplate sBgTemplates[3] =
